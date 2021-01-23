@@ -39,6 +39,15 @@ app.get('/api/chatacters', (req, res) => {
     res.json(characters)
 })
 
+app.get('/api/characters/:route', (req, res) => {
+    
+    const character = characters.find(character => {
+        const targerCharacter = req.params.route
+        console.log(character.route === character)
+    })
+    res.json(character)
+})
+
 app.listen(PORT, () => {
     console.log(`Server lisetning on http://localhost:${PORT}`)
 })
