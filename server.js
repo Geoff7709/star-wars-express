@@ -35,15 +35,15 @@ app.get('/', (req, res) => {
     res.send('May the force be with you!')
 })
 
-app.get('/api/chatacters', (req, res) => {
+app.get('/api/characters', (req, res) => {
     res.json(characters)
 })
 
 app.get('/api/characters/:route', (req, res) => {
     
     const character = characters.find(character => {
-        const targerCharacter = req.params.route
-        console.log(character.route === character)
+        const targetCharacter = req.params.route
+        console.log(character.route === targetCharacter)
     })
     res.json(character)
 })
